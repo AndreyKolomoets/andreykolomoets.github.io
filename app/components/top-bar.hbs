@@ -1,0 +1,34 @@
+{{!-- Top Bar
+============================================= --}}
+<div id="top-bar">
+    <div class="container clearfix">
+
+        <div class="row justify-content-between">
+            <div class="col-12 col-md-auto">
+
+                {{!-- Top Social
+                ============================================= --}}
+                <ul id="top-social">
+                    {{#each this.socials as |social|}}
+                        <Header::Social @url={{social.url}} @slag={{social.slag}} @name={{social.name}}/>
+                    {{/each}}
+                </ul>{{!-- #top-social end --}}
+
+            </div>
+
+            <div class="col-12 col-md-auto">
+
+                {{!-- Top Links
+                ============================================= --}}
+                <div class="top-links">
+                    <ul class="top-links-container">
+                        <Header::LocaleSwitcher/>
+                        <li class="top-links-item"><a href="contact.html">{{t "header.contact"}}</a></li>
+                    </ul>
+                </div>{{!-- .top-links end --}}
+
+            </div>
+        </div>
+
+    </div>
+</div>{{!-- #top-bar end --}}

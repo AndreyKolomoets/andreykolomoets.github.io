@@ -1,41 +1,8 @@
-{{!-- Top Bar
-============================================= --}}
-<div id="top-bar">
-    <div class="container clearfix">
 
-        <div class="row justify-content-between">
-            <div class="col-12 col-md-auto">
-
-                {{!-- Top Social
-                ============================================= --}}
-                <ul id="top-social">
-                    {{#each this.socials as |social|}}
-                        <Header::Social @url={{social.url}} @slag={{social.slag}} @name={{social.name}}/>
-                    {{/each}}
-                </ul>{{!-- #top-social end --}}
-
-            </div>
-
-            <div class="col-12 col-md-auto">
-
-                {{!-- Top Links
-                ============================================= --}}
-                <div class="top-links">
-                    <ul class="top-links-container">
-                        <Header::LocaleSwitcher/>
-                        <li class="top-links-item"><a href="contact.html">{{t "header.contact"}}</a></li>
-                    </ul>
-                </div>{{!-- .top-links end --}}
-
-            </div>
-        </div>
-
-    </div>
-</div>{{!-- #top-bar end --}}
 
 {{!-- Header
 ============================================= --}}
-<header id="header" class="header-size-sm" data-sticky-shrink="false">
+<header id="header" class="header-size-sm {{if this.isSticky "sticky-header"}}">
     <div class="container">
         <div class="header-row">
 
@@ -81,37 +48,7 @@
                     <svg class="svg-trigger" viewBox="0 0 100 100"><path d="m 30,33 h 40 c 3.722839,0 7.5,3.126468 7.5,8.578427 0,5.451959 -2.727029,8.421573 -7.5,8.421573 h -20"></path><path d="m 30,50 h 40"></path><path d="m 70,67 h -40 c 0,0 -7.5,-0.802118 -7.5,-8.365747 0,-7.563629 7.5,-8.634253 7.5,-8.634253 h 20"></path></svg>
                 </div>
 
-                {{!-- Primary Navigation
-                ============================================= --}}
-                <nav class="primary-menu with-arrows">
-
-                    <ul class="menu-container">
-                        <li class="menu-item current"><a class="menu-link" href="demo-construction.html"><div>Home</div></a></li>
-                        <li class="menu-item"><a class="menu-link" href="demo-construction-services.html"><div>What we do</div></a>
-                            <ul class="sub-menu-container">
-                                <li class="menu-item"><a class="menu-link" href="#"><div>Housing Management</div></a></li>
-                                <li class="menu-item"><a class="menu-link" href="#"><div>Construction Planning</div></a></li>
-                                <li class="menu-item"><a class="menu-link" href="#"><div>Green Homes</div></a></li>
-                                <li class="menu-item"><a class="menu-link" href="#"><div>Architecture Design</div></a></li>
-                                <li class="menu-item"><a class="menu-link" href="#"><div>Interior Planning</div></a></li>
-                            </ul>
-                        </li>
-                        <li class="menu-item"><a class="menu-link" href="demo-construction-about-us.html"><div>About Us</div></a></li>
-                        <li class="menu-item"><a class="menu-link" href="demo-construction-projects.html"><div>Projects</div></a>
-                            <ul class="sub-menu-container">
-                                <li class="menu-item"><a class="menu-link" href="demo-construction-projects-2.html"><div>2 Columns</div></a></li>
-                                <li class="menu-item"><a class="menu-link" href="demo-construction-projects-3.html"><div>3 Columns</div></a></li>
-                                <li class="menu-item"><a class="menu-link" href="demo-construction-projects.html"><div>4 Columns</div></a></li>
-                                <li class="menu-item"><a class="menu-link" href="demo-construction-projects-5.html"><div>5 Columns</div></a></li>
-                            </ul>
-                        </li>
-                        <li class="menu-item"><a class="menu-link" href="demo-construction-investors.html"><div>Investors</div></a></li>
-                        <li class="menu-item"><a class="menu-link" href="demo-construction-blog.html"><div>News</div></a></li>
-                        <li class="menu-item"><a class="menu-link" href="demo-construction-careers.html"><div>Careers</div></a></li>
-                        <li class="menu-item"><a class="menu-link" href="demo-construction-contact.html"><div>Contact</div></a></li>
-                    </ul>
-
-                </nav>{{!-- #primary-menu end --}}
+                <Header::PrimaryNavigation/>
 
                 <form class="top-search-form" action="search.html" method="get">
                     <input type="text" name="q" class="form-control" value="" placeholder="Type &amp; Hit Enter.." autocomplete="off">
