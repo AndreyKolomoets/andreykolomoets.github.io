@@ -1,1 +1,1 @@
-<div id="gotoTop" class="icon-angle-up" style={{if this.isShown "display: block;"}} {{on "click" this.scrollToTop}}></div>
+<div id="gotoTop" class="icon-angle-up"  {{did-insert this.addScrollListener}} style={{if this.isShown "display: block;"}} {{on "click" this.scrollToTop}}></div>

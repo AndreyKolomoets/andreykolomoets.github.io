@@ -1,7 +1,6 @@
 import Route from '@ember/routing/route';
 import { service } from '@ember/service';
 import { tracked } from '@glimmer/tracking';
-import { getOwner } from '@ember/application';
 import { addClass, removeClass } from 'ember-body-class/util/bodyClass';
 import { difference } from '../util/set';
 
@@ -9,6 +8,7 @@ export default class ApplicationRoute extends Route {
   @service intl;
   @service media;
   @service('language-detector') languageDetector;
+  @service('-document') document;
 
   @tracked mediaClass;
 
@@ -28,8 +28,7 @@ export default class ApplicationRoute extends Route {
   }
 
   changeBodyClass() {
-    const document = getOwner(this).lookup('service:-document');
-    const body = document.body;
+    const body = this.document.body;
     const allClasses = new Set(Object.keys(this.media.matchers));
     const currentClasses = new Set(this.media.matches);
 

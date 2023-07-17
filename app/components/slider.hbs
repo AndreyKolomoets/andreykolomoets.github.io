@@ -1,0 +1,55 @@
+<section
+id="slider"
+class="slider-element slider-parallax swiper_wrapper min-vh-75"
+data-loop="true"
+style={{this.sliderParallaxStyles}}
+{{did-insert this.setup}}
+>
+    
+    <Swiper
+    @navigation = {{hash nextEl=".swiper-button-next" prevEl=".swiper-button-prev"}}
+    class="swiper-container swiper-parent"
+        as |swiper|>
+        <swiper.slide class="">
+            <div class="container">
+                     <Slider::Caption
+                     @transformY={{this.captionParallaxYPos}}>
+                            <h2>Welcome to Canvas</h2>
+                            <p class="d-none d-sm-block">Create just what you need for your Perfect Website. Choose from a wide range of Elements &amp; simply put them on your own Canvas.</p>
+                     </Slider::Caption>     
+                </div>
+                <div class="swiper-slide-bg" style="background-image: url('assets/images/slider/2.jpg'); background-position: center top;"></div>
+        </swiper.slide>
+        <swiper.slide>
+            <div class="container">
+                <Slider::Caption
+                @transformY={{this.captionParallaxYPos}}>
+                            <h2>Beautifully Flexible</h2>
+                            <p class="d-none d-sm-block">Looks beautiful &amp; ultra-sharp on Retina Screen Displays. Powerful Layout with Responsive functionality that can be adapted to any screen size.</p>
+                </Slider::Caption>
+                </div>
+                {{#if this.showVideo}}
+                    <Slider::Video/>
+                {{else}}
+                    <div class="video-placeholder" style="background-image: url(assets/images/videos/1.jpg);"></div>
+                {{/if}}
+                
+        </swiper.slide>
+        <swiper.slide>
+            <div class="container">
+                    <Slider::Caption
+                @transformY={{this.captionParallaxYPos}}>
+                            <h2>Premium Constructions</h2>
+                            <p class="d-none d-sm-block">You'll be surprised to see the Final Results of your Creation &amp; would crave for more.</p>
+                    </Slider::Caption>
+            </div>
+            <div class="swiper-slide-bg" style="background-image: url('assets/images/slider/1.jpg'); background-position: center bottom;"></div>
+        </swiper.slide>
+        <swiper.navigation>
+            <div class="slider-arrow-left swiper-button-prev"><i class="icon-angle-left"></i></div>
+            <div class="slider-arrow-right swiper-button-next"><i class="icon-angle-right"></i></div>
+        </swiper.navigation>
+        <swiper.scrollbar />
+    </Swiper>
+
+</section>

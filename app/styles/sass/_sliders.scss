@@ -299,9 +299,6 @@ body:not(.stretched) .slider-parallax .slider-inner { left: auto; }
 		min-height: 100%;
 		top: 50%;
 		transform: translateY(-50%);*/
-		body:not(.has-plugin-html5video) & {
-			opacity: 0;
-		}
 	}
 }
 

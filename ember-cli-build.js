@@ -12,6 +12,10 @@ module.exports = function (defaults) {
       bootstrapVersion: 4,
       importBootstrapCSS: false,
     },
+
+    'ember-cli-terser': {
+      enabled: false,
+    },
   });
 
   return app.toTree();

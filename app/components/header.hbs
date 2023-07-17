@@ -1,8 +1,6 @@
-
-
 {{!-- Header
 ============================================= --}}
-<header id="header" class="header-size-sm {{if this.isSticky "sticky-header"}}">
+<header id="header" class="header-size-sm {{if this.isSticky "sticky-header"}}" {{did-insert this.addScrollListener}}>
     <div class="container">
         <div class="header-row">
 
