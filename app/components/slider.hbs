@@ -5,13 +5,13 @@ data-loop="true"
 style={{this.sliderParallaxStyles}}
 {{did-insert this.setup}}
 >
-    
-    <Swiper
-    @navigation = {{hash nextEl=".swiper-button-next" prevEl=".swiper-button-prev"}}
-    class="swiper-container swiper-parent"
-        as |swiper|>
-        <swiper.slide class="">
-            <div class="container">
+<div class="swiper-container swiper-parent">
+<BsCarousel
+  class="swiper-wrapper"
+  @autoPlay={{true}}
+  as |car|>
+    <car.slide>
+      <div class="container">
                      <Slider::Caption
                      @transformY={{this.captionParallaxYPos}}>
                             <h2>Welcome to Canvas</h2>
@@ -19,9 +19,9 @@ style={{this.sliderParallaxStyles}}
                      </Slider::Caption>     
                 </div>
                 <div class="swiper-slide-bg" style="background-image: url('assets/images/slider/2.jpg'); background-position: center top;"></div>
-        </swiper.slide>
-        <swiper.slide>
-            <div class="container">
+    </car.slide>
+    <car.slide>
+      <div class="container">
                 <Slider::Caption
                 @transformY={{this.captionParallaxYPos}}>
                             <h2>Beautifully Flexible</h2>
@@ -33,10 +33,9 @@ style={{this.sliderParallaxStyles}}
                 {{else}}
                     <div class="video-placeholder" style="background-image: url(assets/images/videos/1.jpg);"></div>
                 {{/if}}
-                
-        </swiper.slide>
-        <swiper.slide>
-            <div class="container">
+    </car.slide>
+    <car.slide>
+      <div class="container">
                     <Slider::Caption
                 @transformY={{this.captionParallaxYPos}}>
                             <h2>Premium Constructions</h2>
@@ -44,12 +43,7 @@ style={{this.sliderParallaxStyles}}
                     </Slider::Caption>
             </div>
             <div class="swiper-slide-bg" style="background-image: url('assets/images/slider/1.jpg'); background-position: center bottom;"></div>
-        </swiper.slide>
-        <swiper.navigation>
-            <div class="slider-arrow-left swiper-button-prev"><i class="icon-angle-left"></i></div>
-            <div class="slider-arrow-right swiper-button-next"><i class="icon-angle-right"></i></div>
-        </swiper.navigation>
-        <swiper.scrollbar />
-    </Swiper>
-
+    </car.slide>
+</BsCarousel>
+</div>
 </section>

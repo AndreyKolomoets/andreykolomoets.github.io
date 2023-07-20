@@ -7,7 +7,7 @@ export default class PortfolioItemComponent extends Component {
 
   @action
   changeFade(type) {
-    if (this.animation != `fade${type}`){
+    if (this.animation != `fade${type}`) {
       this.animation = `fade${type}`;
     }
   }

@@ -5,6 +5,7 @@ import { tracked } from '@glimmer/tracking';
 import getStyles from '../../util/style';
 
 export default class VideoComponent extends Component {
+  @service fastboot;
   @service('-document') document;
 
   @tracked
@@ -17,9 +18,19 @@ export default class VideoComponent extends Component {
 
   @action
   setup() {
-    const element = this.document.querySelector('.video-wrap:has(video)');
+    if (!this.fastboot.isFastBoot) {
+      window.addEventListener('load', () => this.calculateSize(this));
+    }
+  }
+
+  calculateSize(component) {
+    debugger;
+    console.log('setup video');
+    const element = component.document.querySelector('.video-wrap:has(video)');
+    console.log(element);
     const divWidth = element.offsetWidth;
     const divHeight = element.offsetHeight;
+    console.log(divWidth, divHeight);
     let elWidth = (16 * divHeight) / 9;
     let elHeight = divHeight;
 
@@ -43,6 +54,6 @@ export default class VideoComponent extends Component {
         left: -((elWidth - divWidth) / 2) + 'px',
       });
     }
-    this.videoStyle = getStyles(style);
+    component.videoStyle = getStyles(style);
   }
 }
