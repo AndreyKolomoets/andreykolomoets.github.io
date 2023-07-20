@@ -1,0 +1,9 @@
+<div class="section mb-0">
+    <h2 class="center mb-0 ls1">Some of Our Esteemed Projects:</h2>
+</div>
+
+<div id="portfolio" class="portfolio row grid-container no-gutters">
+    {{#each @portfolio as |portfolio-item|}}
+      <Portfolio::Item @item={{portfolio-item}} />
+    {{/each}}
+</div>

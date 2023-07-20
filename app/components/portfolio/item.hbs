@@ -1,0 +1,26 @@
+<article class="portfolio-item col-12 col-sm-6 col-md-4 col-lg-3">
+        <div class="grid-inner">
+            <div
+            class="portfolio-image"
+            {{on "mouseenter" (fn this.changeFade "In")}}
+            {{on "mouseleave" (fn this.changeFade "Out")}}
+            >
+                <img src={{@item.image}} alt={{@item.alt}}>
+                <div class="bg-overlay">
+                    <div class="bg-overlay-content dark" {{animate this.animation}}>
+                        <LinkTo class="overlay-trigger-icon bg-light text-dark" @route="portfolio" @model={{@item.id}}>
+                            <i class="icon-line-ellipsis"></i>
+                        </LinkTo>
+                    </div>
+                    <div class="bg-overlay-bg dark" {{animate this.animation}}></div>
+                </div>
+            </div>
+
+            <div class="portfolio-desc">
+                <h3>
+                    <LinkTo @route="portfolio" @model={{@item.id}}>{{@item.name}}</LinkTo>
+                </h3>
+                <span>{{@item.city}}</span>
+            </div>
+        </div>
+    </article>
